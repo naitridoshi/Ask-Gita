@@ -7,17 +7,17 @@ from multiprocessing import Pool
 from tqdm import tqdm
 
 from langchain.document_loaders import (
-    # CSVLoader,
-    # EverNoteLoader,
+    CSVLoader,
+    EverNoteLoader,
     PyMuPDFLoader,
-    # TextLoader,
-    # UnstructuredEmailLoader,
-    # UnstructuredEPubLoader,
-    # UnstructuredHTMLLoader,
-    # UnstructuredMarkdownLoader,
-    # UnstructuredODTLoader,
-    # UnstructuredPowerPointLoader,
-    # UnstructuredWordDocumentLoader,
+    TextLoader,
+    UnstructuredEmailLoader,
+    UnstructuredEPubLoader,
+    UnstructuredHTMLLoader,
+    UnstructuredMarkdownLoader,
+    UnstructuredODTLoader,
+    UnstructuredPowerPointLoader,
+    UnstructuredWordDocumentLoader,
 )
 
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -65,20 +65,20 @@ class MyElmLoader(UnstructuredEmailLoader):
 
 # Map file extensions to document loaders and their arguments
 LOADER_MAPPING = {
-    # ".csv": (CSVLoader, {}),
+    ".csv": (CSVLoader, {}),
     # ".docx": (Docx2txtLoader, {}),
-    # ".doc": (UnstructuredWordDocumentLoader, {}),
-    # ".docx": (UnstructuredWordDocumentLoader, {}),
-    # ".enex": (EverNoteLoader, {}),
-    # ".eml": (MyElmLoader, {}),
-    # ".epub": (UnstructuredEPubLoader, {}),
-    # ".html": (UnstructuredHTMLLoader, {}),
-    # ".md": (UnstructuredMarkdownLoader, {}),
-    # ".odt": (UnstructuredODTLoader, {}),
+    ".doc": (UnstructuredWordDocumentLoader, {}),
+    ".docx": (UnstructuredWordDocumentLoader, {}),
+    ".enex": (EverNoteLoader, {}),
+    ".eml": (MyElmLoader, {}),
+    ".epub": (UnstructuredEPubLoader, {}),
+    ".html": (UnstructuredHTMLLoader, {}),
+    ".md": (UnstructuredMarkdownLoader, {}),
+    ".odt": (UnstructuredODTLoader, {}),
     ".pdf": (PyMuPDFLoader, {}),
-    # ".ppt": (UnstructuredPowerPointLoader, {}),
-    # ".pptx": (UnstructuredPowerPointLoader, {}),
-    # ".txt": (TextLoader, {"encoding": "utf8"}),
+    ".ppt": (UnstructuredPowerPointLoader, {}),
+    ".pptx": (UnstructuredPowerPointLoader, {}),
+    ".txt": (TextLoader, {"encoding": "utf8"}),
     # Add more mappings for other file extensions and loaders as needed
 }
 
